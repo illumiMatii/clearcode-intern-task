@@ -83,7 +83,7 @@ else if(visitor.countryCode == null) {
 
 I want to show a quick example how this script works:
 
-* We have an object like this:
+* We have an array like this:
 ```js
 const visitorsData = [
     {
