@@ -10,13 +10,7 @@ const visitorsData = [
     },
     {
         id:'0976a56f-b6d4-4155-b4b2-7ad0f8d4821f',
-        firstName: 'Sasha',
-        ip: "5.6.7.8"
-    },
-    {
-        id: '63faedf7-f1fb-42d7-93b1-950a23c19c0d',
-        firstName: 'Caroline',
-        ip: "194.181.243.13"
+        firstName: 'Sasha'
     }
 ];
 
