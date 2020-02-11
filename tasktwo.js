@@ -25,16 +25,16 @@ function enrichVisitorsData(visitorsData) {
 
         let url = "https://api.nationalize.io/?name=" + visitor.firstName;
         
-        genderize(visitor.firstName, (err, obj) => { // - ustalenie płci ze względu na imię
+        genderize(visitor.firstName, (err, obj) => {
             if (obj.probability >= 0.75){
                 visitor["gender"] = obj.gender;
             }
 
-            if(visitor.ip == null && visitor.countryCode == null) { // - sprawdza czy osoba ma podane IP
+            if(visitor.ip == null && visitor.countryCode == null) {
                 request(url, (error, response, data) => {
                     if (!error) {
-                        const parsedData = JSON.parse(data); // - body to string wiec zmieniam go na baze danych JSON
-                        parsedData["country"].forEach(result => { // - dla kazdego elementu obiektu "country" wykonaj
+                        const parsedData = JSON.parse(data);
+                        parsedData["country"].forEach(result => {
                             if(result.probability >= 0.75) {
                                 visitor["countryCode"] = result.country_id;
                             }
@@ -44,7 +44,7 @@ function enrichVisitorsData(visitorsData) {
                 });
             } else if(visitor.countryCode == null) {
                 ip2countrify.lookup(
-                    visitor.ip, (ip, results, error) => { // - ustalenie kraju poprzez IP
+                    visitor.ip, (ip, results, error) => {
                         if(!error){
                             visitor["countryCode"] = results.countryCode;                        
                         }
