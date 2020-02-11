@@ -1,5 +1,5 @@
 # clearcode-intern-tasks
-Tasks which I made in recruitment process for Clearcode
+Task which I made in recruitment process for Clearcode
 
 ## :page_with_curl: Task 2: We want to know the visitor 
 
